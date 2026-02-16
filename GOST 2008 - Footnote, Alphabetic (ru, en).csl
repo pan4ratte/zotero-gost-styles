@@ -269,33 +269,6 @@
 
     _______________________________________________________________________________ -->
 
-<!-- Формат цитат для ненумерованных ссылок вида [Иванов, 2013] или [Иванов, 2013, с. 55].
-Сортировка библиографии в этом случае должна быть в алфавитном порядке.
-Для включения этого вида форматирования расскомментировать этот блок, закомментировать следующий (для нумерованных ссылок).-->
-
-<!--
-  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true" collapse="year" et-al-subsequent-use-first="1" disambiguate-add-names="false" disambiguate-add-givenname="false">
-    <sort>
-      <key macro="language-sort"/>
-      <key macro="author-title"/>
-      <key variable="issued"/>
-    </sort>
-    <layout prefix="[" suffix="]" delimiter="; " page-range-format="">
-      <group delimiter=", ">
-        <text macro="author_short" suffix=""/>
-        <text macro="year-date"/>      
-      </group>
-      <choose>
-        <if variable="locator">
-          <label variable="locator" form="short" prefix=",&#160;" suffix="&#160;"/>
-          <text variable="locator"/>
-        </if>
-      </choose>      
-    </layout>
-  </citation> -->
-
-<!-- Формат цитат для нумерованных ссылок вида [1] или [1, с. 55].
-Для включения этого вида форматирования расскомментировать этот блок, закомментировать предыдущий (для ссылок вида [Автор, год]).-->
 
   <citation et-al-min="4" et-al-use-first="1">
     <sort>
