@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0">
+  <info>
+    <title>ГОСТ Р 7.0.100-2018: постраничные сноски, алфавитный порядок (ru, en)</title>
+      <id>da248937-d6de-41cf-ac3c-5208b4673a5d</id>
+      <link href="https://github.com/pan4ratte/zotero-gost-styles" rel="self"/>
+      <author>
+          <name>Ингрэм М. А.</name>
+          <email>markingram.edu@outlook.com</email>
+          <uri></uri>
+      </author>    
+    <category citation-format="note"/>
+    <category field="generic-base"/>
+    <updated>16.02.2026</updated>
+    <summary>
+
+      Стиль разработал Ингрэм Марк Александрович, он входит в публичный репозиторий стилей Zotero по ГОСТ. Особенности стиля:
+
+      1. Соответствие библиографии ГОСТ Р 7.0.100-2018.
+      2. Постраничные сноски.
+      3. Корректная обработка библиографии источников (технических терминов): на русском и английском языках.
+      4. Корректная обработка повторяющихся цитирований "Ibid" и "Там же", с сохранением возможности указания страниц.
+
+    </summary>
+    <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
+    <rights></rights>
+  </info>
+
+
+
+    <locale xml:lang="en">
+    <terms>
+      <term name="et-al"> [et al.]</term>
+      <term name="and others"></term>
+      <term name="page" form="short">p.</term>
+      <term name="number-of-pages" form="short">p.</term>
+      <term name="number-of-volumes" form="short">vols.</term>
+      <term name="note" form="long"></term>
+      <term name="note" form="short"></term>
+      <term name="collection-editor" form="short">coll.</term>
+      <term name="editortranslator" form="short">
+        <single>ed. &amp; trans.</single>
+        <multiple>eds. &amp; trans.</multiple>
+      </term>   
+    </terms>
+  </locale>
+
+  <locale xml:lang="ru">
+    <terms>
+      <term name="ibid-ru">Там же</term>
+      <term name="et-al"> [и др.]</term>
+      <term name="and others"></term>
+      <term name="page" form="short">с.</term>
+      <term name="number-of-pages" form="short">с.</term>
+      <term name="number-of-volumes" form="short">т.</term>
+      <term name="note" form="long"></term>
+      <term name="note" form="short"></term>
+      <term name="collection-editor" form="short">сост.</term>
+      <term name="collection-number" form="short">вып.</term>
+      <term name="translator" form="short">
+        <single>пер.</single>
+        <multiple>пер.</multiple>
+      </term>
+      <term name="editortranslator" form="short">
+        <single>ред. и пер.</single>
+        <multiple>ред. и пер.</multiple>
+      </term>  
