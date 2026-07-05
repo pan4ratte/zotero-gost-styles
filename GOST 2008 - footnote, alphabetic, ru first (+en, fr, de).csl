@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0">
   <info>
-    <title>ГОСТ Р 7.0.5-2008: постраничные сноски, алфавитный порядок (ru, en)</title>
+    <title>ГОСТ 2008: постраничные сноски, алфавитный порядок, ru сначала (+en, fr, de)</title>
     <id>9e6c242e-d470-4b2b-b967-1f8f4fbcd7d6</id>
-    <link href="" rel="self"/>
+    <link href="https://github.com/pan4ratte/zotero-gost-styles" rel="self"/>
+    <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
     <author>
       <name>Ингрэм М. А.</name>
       <email>markingram.edu@outlook.com</email>
@@ -16,13 +17,12 @@
       Стиль разработал Ингрэм М. А. Основа кода позаимствована у Романа Расупова, внесены значительные изменения. Данный стиль обладает особенностями, восполняющими недостатки многих других существующих стилей:
 
       * Постраничные сноски;
-      * Корректная обработка источников как на русском, так и на английском языках (при заполнении соответствующего поля значениями "ru" или "en");
-      * Автоматическая обработка повторяющихся сносок "Ibid." и "Там же", в том числе с указанием страниц;
-      * Сокращённоая библиография при повторном цитировании источника (не Ibid.). При наличии заполненном поле "Short Title" используется сокращённое название. Сокращение не применяется к веб-страницам.
+      * Корректная обработка источников на русском, английском, французском и немецком языках (при заполнении поля "Language" значениями "ru", "en", "fr" или "de");
+      * Автоматическая обработка повторяющихся сносок "Ibid." и "Там же" и т.д., — в том числе с указанием страниц;
+      * Сокращённоая библиографическая запись при повторном цитировании источника (не Ibid.). При наличии заполненном поле "Short Title" используется сокращённое название. Сокращение не применяется к веб-страницам.
 
-      В данный момент стиль находится на стадии активной разработки, поэтому возможны значительные изменения.
+      В данный момент стиль активно разрабатывается, поэтому возможны значительные изменения.
     </summary>
-    <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
     <rights>This work is licensed under a Creative Commons Attribution-Share Alike 3.0 Unported License  http://creativecommons.org/licenses/by-sa/3.0/</rights>
   </info>
 
@@ -85,6 +85,74 @@
       <term name="month-10" form="short">окт.</term>
       <term name="month-11" form="short">нояб.</term>
       <term name="month-12" form="short">дек.</term>
+    </terms>
+  </locale>
+
+  <locale xml:lang="fr">
+    <terms>
+      <term name="et-al"> [et al.]</term>
+      <term name="and others"></term>
+      <term name="page" form="short">p.</term>
+      <term name="number-of-pages" form="short">p.</term>
+      <term name="number-of-volumes" form="short">vol.</term>
+      <term name="in">dans</term>
+      <term name="note" form="long"></term>
+      <term name="note" form="short"></term>
+      <term name="collection-editor" form="short">dir.</term>
+      <term name="collection-number" form="short">n&#176;</term>
+      <term name="translator" form="short">trad.</term>
+      <term name="editortranslator" form="short">
+        <single>éd. et trad.</single>
+        <multiple>éds. et trad.</multiple>
+      </term>
+
+      <!-- SHORT MONTH FORMS -->
+      <term name="month-01" form="short">janv.</term>
+      <term name="month-02" form="short">févr.</term>
+      <term name="month-03" form="short">mars</term>
+      <term name="month-04" form="short">avr.</term>
+      <term name="month-05" form="short">mai</term>
+      <term name="month-06" form="short">juin</term>
+      <term name="month-07" form="short">juill.</term>
+      <term name="month-08" form="short">août</term>
+      <term name="month-09" form="short">sept.</term>
+      <term name="month-10" form="short">oct.</term>
+      <term name="month-11" form="short">nov.</term>
+      <term name="month-12" form="short">déc.</term>
+    </terms>
+  </locale>
+
+  <locale xml:lang="de">
+    <terms>
+      <term name="et-al"> [u.&#160;a.]</term>
+      <term name="and others"></term>
+      <term name="page" form="short">S.</term>
+      <term name="number-of-pages" form="short">S.</term>
+      <term name="number-of-volumes" form="short">Bde.</term>
+      <term name="in">in</term>
+      <term name="note" form="long"></term>
+      <term name="note" form="short"></term>
+      <term name="collection-editor" form="short">Hrsg.</term>
+      <term name="collection-number" form="short">Nr.</term>
+      <term name="translator" form="short">Übers.</term>
+      <term name="editortranslator" form="short">
+        <single>Hrsg. u. Übers.</single>
+        <multiple>Hrsg. u. Übers.</multiple>
+      </term>
+
+      <!-- SHORT MONTH FORMS -->
+      <term name="month-01" form="short">Jan.</term>
+      <term name="month-02" form="short">Feb.</term>
+      <term name="month-03" form="short">März</term>
+      <term name="month-04" form="short">Apr.</term>
+      <term name="month-05" form="short">Mai</term>
+      <term name="month-06" form="short">Juni</term>
+      <term name="month-07" form="short">Juli</term>
+      <term name="month-08" form="short">Aug.</term>
+      <term name="month-09" form="short">Sept.</term>
+      <term name="month-10" form="short">Okt.</term>
+      <term name="month-11" form="short">Nov.</term>
+      <term name="month-12" form="short">Dez.</term>
     </terms>
   </locale>
 
@@ -307,13 +375,81 @@
       <choose>
         <if position="ibid-with-locator">
           <group delimiter=", ">
-            <text term="ibid"/>
+            <text term="ibid" text-case="capitalize-first"/>
             <text term="page" form="short" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
         <else-if position="ibid">
-          <text term="ibid"/>
+          <text term="ibid" text-case="capitalize-first"/>
+        </else-if>
+        <else-if position="subsequent">
+          <choose>
+            <if type="webpage"> <!-- Веб-источники не сокращаются: при повторном цитировании выводится полное описание -->
+              <text macro="bibliography"/>
+            </if>
+            <else>
+              <group delimiter=". – ">
+                <text macro="author-short-title"/>
+                <group delimiter="&#160;">
+                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <text variable="locator"/>
+                </group>
+              </group>
+            </else>
+          </choose>
+        </else-if>
+        <else>
+          <text macro="bibliography"/>
+        </else>
+      </choose>
+    </layout>
+
+    <layout locale="fr" suffix="." delimiter=" ">
+      <choose>
+        <if position="ibid-with-locator">
+          <group delimiter=", ">
+            <text term="ibid" text-case="capitalize-first"/>
+            <text term="page" form="short" suffix="&#160;"/>
+          </group>
+            <text variable="locator"/>
+        </if>
+        <else-if position="ibid">
+          <text term="ibid" text-case="capitalize-first"/>
+        </else-if>
+        <else-if position="subsequent">
+          <choose>
+            <if type="webpage"> <!-- Веб-источники не сокращаются: при повторном цитировании выводится полное описание -->
+              <text macro="bibliography"/>
+            </if>
+            <else>
+              <group delimiter=". – ">
+                <text macro="author-short-title"/>
+                <group delimiter="&#160;">
+                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <text variable="locator"/>
+                </group>
+              </group>
+            </else>
+          </choose>
+        </else-if>
+        <else>
+          <text macro="bibliography"/>
+        </else>
+      </choose>
+    </layout>
+
+    <layout locale="de" suffix="." delimiter=" ">
+      <choose>
+        <if position="ibid-with-locator">
+          <group delimiter=", ">
+            <text term="ibid" text-case="capitalize-first"/>
+            <text term="page" form="short" suffix="&#160;"/>
+          </group>
+            <text variable="locator"/>
+        </if>
+        <else-if position="ibid">
+          <text term="ibid" text-case="capitalize-first"/>
         </else-if>
         <else-if position="subsequent">
           <choose>
@@ -634,6 +770,14 @@
     </sort>
 
     <layout locale="en" suffix=".">
+      <text macro="bibliography"/>
+    </layout>
+
+    <layout locale="fr" suffix=".">
+      <text macro="bibliography"/>
+    </layout>
+
+    <layout locale="de" suffix=".">
       <text macro="bibliography"/>
     </layout>
 
