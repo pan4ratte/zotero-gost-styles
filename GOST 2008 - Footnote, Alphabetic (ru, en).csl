@@ -214,11 +214,11 @@
   </macro>
 
   <macro name="page">
-    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="capitalize-first"/>
-    <text variable="page" suffix="."/>    
+    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="lowercase"/>
+    <text variable="page" suffix="."/>
   </macro>
 
-  <macro name="number-of-pages">    
+  <macro name="number-of-pages">
     <text variable="number-of-pages"/>
     <label variable="number-of-pages" form="short" prefix="&#160;" suffix=""/>
   </macro>
@@ -232,17 +232,17 @@
         <text macro="volumes"/>
       </else-if>
       <else>
-        <text macro="number-of-pages"/>        
+        <text macro="number-of-pages"/>
       </else>
     </choose>
   </macro>
- 
+
   <macro name="volume">
     <choose>
       <if variable="volume">
         <label variable="volume" form="short" prefix="" suffix="&#160;" text-case="capitalize-first"/>
         <text variable="volume"/>
-      </if>      
+      </if>
     </choose>
   </macro>
 
@@ -256,7 +256,7 @@
       <if variable="collection-number">
         <label variable="collection-number" form="short" prefix="" suffix="&#160;" text-case="capitalize-first"/>
         <text variable="collection-number"/>
-      </if>      
+      </if>
     </choose>
   </macro>
   
