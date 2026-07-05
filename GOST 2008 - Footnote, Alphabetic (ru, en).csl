@@ -38,13 +38,14 @@
       <term name="page" form="short">p.</term>
       <term name="number-of-pages" form="short">p.</term>
       <term name="number-of-volumes" form="short">vols.</term>
+      <term name="in">in</term>
       <term name="note" form="long"></term>
       <term name="note" form="short"></term>
       <term name="collection-editor" form="short">coll.</term>
       <term name="editortranslator" form="short">
         <single>ed. &amp; trans.</single>
         <multiple>eds. &amp; trans.</multiple>
-      </term>   
+      </term>
     </terms>
   </locale>
 
@@ -56,6 +57,7 @@
       <term name="page" form="short">с.</term>
       <term name="number-of-pages" form="short">с.</term>
       <term name="number-of-volumes" form="short">т.</term>
+      <term name="in">в</term>
       <term name="note" form="long"></term>
       <term name="note" form="short"></term>
       <term name="collection-editor" form="short">сост.</term>
@@ -67,7 +69,7 @@
       <term name="editortranslator" form="short">
         <single>ред. и пер.</single>
         <multiple>ред. и пер.</multiple>
-      </term>     
+      </term>
 
       <!-- SHORT MONTH FORMS -->
       <term name="month-01" form="short">янв.</term>
