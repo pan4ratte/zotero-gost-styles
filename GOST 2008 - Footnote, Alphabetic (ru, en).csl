@@ -92,19 +92,14 @@
       <term name="page-range-delimiter">-</term> <!-- Если между номерами страниц нужно тире, а не дефис [С. 56-59], то эту строку нужно закомментировать -->
     </terms>
   </locale>
-  
-  <macro name="number-of-volumes">
-    <choose>
-      <if variable="language">        
-        <text variable="number-of-volumes" prefix="in&#160;"/>
-        <label variable="number-of-volumes" form="short" prefix="&#160;"/>
-      </if>
-      <else>
-        <text variable="number-of-volumes" prefix="в&#160;"/>
-        <label variable="number-of-volumes" form="short" prefix="&#160;"/>
-      </else>
-    </choose>
-  </macro>
+
+<!-- Заметка: 21 мая 2026 изменён макрос ниже и добавлены локали для "в"...2 т. или "in"...2 vols. -->
+
+<macro name="number-of-volumes">
+  <text term="in" suffix="&#160;"/>
+  <text variable="number-of-volumes" suffix="&#160;"/>
+  <label variable="number-of-volumes" form="short"/>
+</macro>
 
   <macro name="language-sort"> <!-- Макрос сортировки по полю "Language" (сначала русскоязычные источники, затем иностранные) -->
     <choose>
@@ -114,7 +109,7 @@
       <else>
         <text value="A000"/>
       </else>
-    </choose>    
+    </choose>
   </macro>
 
 <!--_______________________________________________________________________________
@@ -143,13 +138,13 @@
         </names>
       </else>
     </choose>
-  </macro>  
+  </macro>
 
   <macro name="author-title">
     <names variable="author" suffix=". ">
       <!-- Добавить запятую между фамилией и инициалами автора: sort-separator=",&#160;", иначе sort-separator="&#160;" -->
       <!-- Сделать шрифт фамилий и инициалов авторов наклонным: font-style="italic", иначе font-style="normal" -->
-      <name et-al-min="2" et-al-use-first="1" suppress-min="4" initialize-with="." font-style="normal" name-as-sort-order="first" sort-separator="&#160;"/> 
+      <name et-al-min="2" et-al-use-first="1" suppress-min="4" initialize-with="." font-style="normal" name-as-sort-order="first" sort-separator="&#160;"/>
       <et-al term="and others"/>
     </names>
     <text variable="title"/>
@@ -163,27 +158,27 @@
       <else>
         <text macro="author-title"/>
       </else>
-    </choose>  
+    </choose>
   </macro>
 
   <macro name="second-position-creators">
     <names variable="author collection-editor editor translator" delimiter="; ">
       <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
-      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>      
+      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
     </names>
   </macro>
 
   <macro name="second-position-authors-only">
     <names variable="author">
       <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
-      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>      
+      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
     </names>
   </macro>
 
   <macro name="second-position-creators-no-authors">
     <names variable="collection-editor editor translator" delimiter="; ">
       <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
-      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>      
+      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
     </names>
   </macro>
 
@@ -202,7 +197,7 @@
 		  <text variable="publisher-place"/>
       <text variable="publisher"/>
     </group>
-    <text macro="year-date" suffix="."/>     
+    <text macro="year-date" suffix="."/>
   </macro>
 
   <macro name="day-month">
