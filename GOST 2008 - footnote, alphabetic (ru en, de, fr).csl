@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0">
   <info>
-    <title>ГОСТ 2008: постраничные сноски, алфавитный порядок, ru сначала (+en, fr, de)</title>
+    <title>ГОСТ 2008: постраничные сноски, алфавитный порядок (ru, en, de, fr)</title>
     <id>9e6c242e-d470-4b2b-b967-1f8f4fbcd7d6</id>
     <link href="https://github.com/pan4ratte/zotero-gost-styles" rel="self"/>
     <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
