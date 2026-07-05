@@ -1,0 +1,99 @@
+name: Release
+
+# Автоматически публикует релиз, когда в ветке main меняется файл VERSION
+# на номер, для которого ещё нет тега/релиза.
+#
+# Как выпустить новую версию:
+#   1. Перенесите изменения из раздела `Unreleased` в CHANGELOG.md
+#      в новый раздел с номером версии и датой (например, `## 1.1.0 - 2026-07-05`).
+#   2. Впишите этот же номер в файл VERSION.
+#   3. Закоммитьте и запушьте в main — релиз соберётся сам.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - VERSION
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # нужны теги для проверки на дубликат
+
+      - name: Read version
+        id: version
+        run: |
+          version="$(tr -d ' \t\r\n' < VERSION)"
+          if [ -z "$version" ]; then
+            echo "Файл VERSION пуст." >&2
+            exit 1
+          fi
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "Версия из файла VERSION: ${version}"
+
+      - name: Check whether this version is already released
+        id: check
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          if git rev-parse -q --verify "refs/tags/${version}" >/dev/null; then
+            echo "Тег ${version} уже существует — релиз пропускается."
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Тег ${version} не найден — будет создан релиз."
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          notes_file="release-notes.md"
+
+          extract() {
+            awk -v ver="$1" '
+              BEGIN { found = 0 }
+              /^## / {
+                if (found) { exit }
+                header = $0
+                gsub(/[][]/, "", header)          # убираем квадратные скобки, если есть
+                if (header ~ ("^## " ver "([ ].*)?$")) { found = 1; next }
+              }
+              found && /^\[[^]]+\]:[ ]/ { exit }   # блок ссылочных определений
+              found { print }
+            ' CHANGELOG.md | sed -e '/./,$!d'
+          }
+
+          if [ -f CHANGELOG.md ]; then
+            # Сначала ищем раздел с точным номером версии, затем — Unreleased.
+            extract "$version" > "$notes_file"
+            if [ ! -s "$notes_file" ]; then
+              extract "Unreleased" > "$notes_file"
+            fi
+          fi
+
+          if [ -s "$notes_file" ]; then
+            echo "Описание релиза взято из CHANGELOG.md."
+            echo "generated=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Подходящий раздел в CHANGELOG.md не найден — используются авто-заметки." >&2
+            echo "generated=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub release
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
+          body_path: ${{ steps.notes.outputs.generated == 'false' && 'release-notes.md' || '' }}
+          generate_release_notes: ${{ steps.notes.outputs.generated == 'true' }}
+          files: |
+            *.csl
