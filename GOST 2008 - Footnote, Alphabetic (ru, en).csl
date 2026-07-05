@@ -162,16 +162,34 @@
   </macro>
 
   <macro name="second-position-creators">
-    <names variable="author collection-editor editor translator" delimiter="; ">
-      <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
-      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
-    </names>
+    <!-- Единственный автор не дублируется в области ответственности (после "/"), т.к. уже указан перед заглавием — но только если нет других создателей (редакторов, составителей, переводчиков). Если они есть, автор показывается вместе с ними (suppress-max не применяется). -->
+    <choose>
+      <if variable="collection-editor editor translator" match="any">
+        <group delimiter="; ">
+          <names variable="author">
+            <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
+            <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
+          </names>
+          <names variable="collection-editor editor translator" delimiter="; ">
+            <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
+            <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
+          </names>
+        </group>
+      </if>
+      <else>
+        <names variable="author">
+          <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
+          <name et-al-min="4" et-al-use-first="1" suppress-max="1" delimiter=", " initialize-with="."/>
+        </names>
+      </else>
+    </choose>
   </macro>
 
   <macro name="second-position-authors-only">
+    <!-- suppress-max="1": единственный автор не повторяется после "/", т.к. уже указан перед заглавием. -->
     <names variable="author">
       <label form="short" prefix=" " suffix=". " text-case="lowercase" strip-periods="true"/>
-      <name et-al-min="4" et-al-use-first="1" delimiter=", " initialize-with="."/>
+      <name et-al-min="4" et-al-use-first="1" suppress-max="1" delimiter=", " initialize-with="."/>
     </names>
   </macro>
 
