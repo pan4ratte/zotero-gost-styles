@@ -277,7 +277,7 @@
         <else-if position="ibid">
           <text term="ibid"/>
         </else-if>
-        <else> 
+        <else>
           <text macro="bibliography"/>
         </else>
       </choose>
@@ -295,7 +295,7 @@
         <else-if position="ibid">
           <text term="ibid-ru"/>
         </else-if>
-        <else> 
+        <else>
           <text macro="bibliography"/>
         </else>
       </choose>
@@ -310,7 +310,7 @@
     _______________________________________________________________________________ -->
 
   <macro name="bibliography">
-    <!--<text macro="citation-number"/> -->     
+    <!--<text macro="citation-number"/> -->
     <choose>
 <!--_______________________________________________________________________________
     _______________ КНИГА (в т.ч. многотомник или отдельный том, а также __________
@@ -327,26 +327,26 @@
               </group>
               <text macro="volume"/>
               <text variable="title-short"/>
-            </group>  
+            </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>
-              <text variable="note"/>              
+              <text variable="note"/>
             </group>
-          </group>            
+          </group>
           <text variable="edition"/>
           <text macro="publisher"/>
           <text macro="collection-number"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="pages-or-volumes"/>
           	  <text variable="medium"/>
-        	</else>        
+        	</else>
       	  </choose>
         </group>
       </if>
@@ -361,18 +361,18 @@
               <text variable="genre"/>
             </group>
             <text macro="second-position-authors-only"/>
-          </group>            
-          <text macro="publisher"/>            
+          </group>
+          <text macro="publisher"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="number-of-pages"/>
-        	</else>        
+        	</else>
       	  </choose>
         </group>
       </else-if>
@@ -390,16 +390,16 @@
               <group delimiter=" : ">
                 <group delimiter=" ">
                   <text variable="container-title"/>
-                  <text variable="event"/>                  
-                </group>                
+                  <text variable="event"/>
+                </group>
                 <text variable="collection-title"/>
                 <text macro="number-of-volumes"/>
               </group>
-              <group delimiter=" ">                
+              <group delimiter=" ">
                 <text macro="second-position-creators-no-authors"/>
                 <text variable="note"/>
-              </group>              
-            </group>                
+              </group>
+            </group>
           </group>
           <text macro="publisher"/>
           <text macro="volume"/>
@@ -408,76 +408,76 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="page"/>
-        	</else>        
+        	</else>
       	  </choose>
         </group>
       </else-if>
 <!--_______________________________________________________________________________
     _________________________ СТАТЬЯ В ПЕРИОДИКЕ, ЖУРНАЛЕ _________________________
     _______________________________________________________________________________ -->
-      <else-if type="article-journal article-magazine" match="any">        
+      <else-if type="article-journal article-magazine" match="any">
         <group delimiter=". – ">
           <group delimiter=" // ">
             <group delimiter=" / ">
               <group delimiter=" : ">
                 <text macro="author-title"/>
-                <text variable="collection-title"/>                
-              </group>              
+                <text variable="collection-title"/>
+              </group>
               <text macro="second-position-authors-only"/>
             </group>
-            <text variable="container-title"/>            
+            <text variable="container-title"/>
           </group>
-          <text macro="year-date"/>          
-          <text macro="volume"/>          
+          <text macro="year-date"/>
+          <text macro="volume"/>
           <text variable="title-short"/>
           <text variable="issue" prefix="№&#160;"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="page"/>
-        	</else>        
-      	  </choose>          
+        	</else>
+      	  </choose>
         </group>
       </else-if>
 <!--_______________________________________________________________________________
     ______________________________ СТАТЬЯ В ГАЗЕТЕ ________________________________
     _______________________________________________________________________________ -->
-      <else-if type="article-newspaper">        
+      <else-if type="article-newspaper">
         <group delimiter=". – ">
           <group delimiter=" // ">
             <group delimiter=" / ">
               <group delimiter=" : ">
                 <text macro="author-title"/>
-                <text variable="section"/>                
-              </group>              
+                <text variable="section"/>
+              </group>
               <text macro="second-position-authors-only"/>
             </group>
-            <text variable="container-title"/>            
+            <text variable="container-title"/>
           </group>
           <text variable="title-short"/>
-          <text macro="year-date"/>                  
-          <text macro="day-month"/>          
+          <text macro="year-date"/>
+          <text macro="day-month"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="page"/>
-        	</else>        
+        	</else>
       	  </choose>
         </group>
       </else-if>
@@ -494,8 +494,8 @@
             <group delimiter=" ">
               <!--<text macro="second-position-authors-only"/>-->
               <text variable="note"/>
-            </group>            
-          </group>            
+            </group>
+          </group>
           <group delimiter=" ">
             <text variable="URL" prefix="URL: "/>
             <choose>
@@ -513,7 +513,7 @@
 <!--_______________________________________________________________________________
     _____________________________ Другие типы источников __________________________
     _______________________________________________________________________________ -->
-      <else>        
+      <else>
         <group delimiter=". – ">
           <group delimiter=" / ">
             <group delimiter=". ">
@@ -524,24 +524,24 @@
               </group>
               <text macro="volume"/>
               <text variable="title-short"/>
-            </group>  
+            </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>
-              <text variable="note"/>               
+              <text variable="note"/>
             </group>
-          </group>            
+          </group>
           <text macro="publisher"/>
           <text macro="collection-number"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
         	<else>
         	  <text macro="pages-or-volumes"/>
-        	</else>        
+        	</else>
       	  </choose>
         </group>
       </else>
@@ -553,12 +553,12 @@
     _________ Непосредтсвенно БИБЛИОГРАФИЯ с сортировкой и локализацией ___________
     _______________________________________________________________________________ -->
 
-  <bibliography et-al-min="4" et-al-use-first="1" page-range-format="">  
+  <bibliography et-al-min="4" et-al-use-first="1" page-range-format="">
     <sort>
       <!-- Строка для сортировки в порядке появления ссылок, а не в алфавитном. Чтобы задействовать, нужно ее раскомментировать, а следующие три закомментировать
       <key variable="citation-number"/>-->
 
-      <key macro="language-sort"/> <!-- Сортировка по полю "Language" (сначала русскоязычные источники, затем иностранные) --> 
+      <key macro="language-sort"/> <!-- Сортировка по полю "Language" (сначала русскоязычные источники, затем иностранные) -->
       <key macro="author-title"/>
       <key variable="issued"/>
     </sort>
@@ -570,6 +570,6 @@
     <layout suffix=".">
       <text macro="bibliography"/>
     </layout>
-    
+
   </bibliography>
 </style>
