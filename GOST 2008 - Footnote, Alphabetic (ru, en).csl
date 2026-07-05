@@ -17,7 +17,8 @@
 
       * Постраничные сноски;
       * Корректная обработка источников как на русском, так и на английском языках (при заполнении соответствующего поля значениями "ru" или "en");
-      * Автоматическая обработка повторяющихся сносок "Ibid." и "Там же", в том числе с указанием страниц.
+      * Автоматическая обработка повторяющихся сносок "Ibid." и "Там же", в том числе с указанием страниц;
+      * Сокращённоая библиография при повторном цитировании источника (не Ibid.). При наличии заполненном поле "Short Title" используется сокращённое название. Сокращение не применяется к веб-страницам.
 
       В данный момент стиль находится на стадии активной разработки, поэтому возможны значительные изменения.
     </summary>
@@ -161,6 +162,25 @@
     </choose>
   </macro>
 
+  <macro name="short-title"> <!-- Сокращённое заглавие для повторных ссылок: используется поле "Short Title" (title-short), если оно заполнено, иначе полное заглавие -->
+    <choose>
+      <if variable="title-short">
+        <text variable="title-short"/>
+      </if>
+      <else>
+        <text variable="title"/>
+      </else>
+    </choose>
+  </macro>
+
+  <macro name="author-short-title"> <!-- Автор(ы) + сокращённое заглавие для повторных (не "Там же") ссылок -->
+    <names variable="author" suffix=". ">
+      <name et-al-min="2" et-al-use-first="1" suppress-min="4" initialize-with="." font-style="normal" name-as-sort-order="first" sort-separator="&#160;"/>
+      <et-al term="and others"/>
+    </names>
+    <text macro="short-title"/>
+  </macro>
+
   <macro name="second-position-creators">
     <!-- Единственный автор не дублируется в области ответственности (после "/"), т.к. уже указан перед заглавием — но только если нет других создателей (редакторов, составителей, переводчиков). Если они есть, автор показывается вместе с ними (suppress-max не применяется). -->
     <choose>
@@ -295,6 +315,22 @@
         <else-if position="ibid">
           <text term="ibid"/>
         </else-if>
+        <else-if position="subsequent">
+          <choose>
+            <if type="webpage"> <!-- Веб-источники не сокращаются: при повторном цитировании выводится полное описание -->
+              <text macro="bibliography"/>
+            </if>
+            <else>
+              <group delimiter=". – ">
+                <text macro="author-short-title"/>
+                <group delimiter="&#160;">
+                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <text variable="locator"/>
+                </group>
+              </group>
+            </else>
+          </choose>
+        </else-if>
         <else>
           <text macro="bibliography"/>
         </else>
@@ -312,6 +348,22 @@
         </if>
         <else-if position="ibid">
           <text term="ibid-ru"/>
+        </else-if>
+        <else-if position="subsequent">
+          <choose>
+            <if type="webpage"> <!-- Веб-источники не сокращаются: при повторном цитировании выводится полное описание -->
+              <text macro="bibliography"/>
+            </if>
+            <else>
+              <group delimiter=". – ">
+                <text macro="author-short-title"/>
+                <group delimiter="&#160;">
+                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <text variable="locator"/>
+                </group>
+              </group>
+            </else>
+          </choose>
         </else-if>
         <else>
           <text macro="bibliography"/>
