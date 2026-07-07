@@ -770,18 +770,22 @@
     </sort>
 
     <layout locale="en" suffix=".">
+      <text macro="citation-number"/>
       <text macro="bibliography"/>
     </layout>
 
     <layout locale="fr" suffix=".">
+      <text macro="citation-number"/>
       <text macro="bibliography"/>
     </layout>
 
     <layout locale="de" suffix=".">
+      <text macro="citation-number"/>
       <text macro="bibliography"/>
     </layout>
 
     <layout suffix=".">
+      <text macro="citation-number"/>
       <text macro="bibliography"/>
     </layout>
 
