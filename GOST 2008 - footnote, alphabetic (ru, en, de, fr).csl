@@ -12,7 +12,7 @@
     </author>
     <category citation-format="note"/>
     <category field="generic-base"/>
-    <updated>05.07.2026</updated>
+    <updated>07.07.2026</updated>
     <summary>
       Стиль разработал Ингрэм М. А. Основа кода позаимствована у Романа Расупова, внесены значительные изменения. Данный стиль обладает особенностями, восполняющими недостатки многих других существующих стилей:
 
@@ -366,6 +366,17 @@
     </choose>
   </macro>
 
+  <macro name="website-designation"> <!-- Обозначение вида ресурса для веб-страниц (ГОСТ Р 7.0.108-2022): поле "Website Type" (genre), напр. "офиц. сайт"; по умолчанию — "сайт" -->
+    <choose>
+      <if variable="genre">
+        <text variable="genre"/>
+      </if>
+      <else>
+        <text value="сайт"/>
+      </else>
+    </choose>
+  </macro>
+
   <citation et-al-min="4" et-al-use-first="1">
     <sort>
       <key variable="citation-number"/>
@@ -692,16 +703,29 @@
     _______________________________________________________________________________ -->
       <else-if type="webpage">
         <group delimiter=". – " prefix="">
-          <group delimiter=" // ">
-            <group delimiter=" : ">
-              <text macro="author-title" suffix=" [Электронный ресурс]"/>
-              <text variable="genre"/>
-            </group>
-            <group delimiter=" ">
-              <!--<text macro="second-position-authors-only"/>-->
-              <text variable="note"/>
-            </group>
-          </group>
+          <choose>
+            <!-- Отдельная страница на сайте: Автор. Заглавие // Название сайта : сайт -->
+            <if variable="container-title">
+              <group delimiter=" // ">
+                <text macro="author-title"/>
+                <group delimiter=" : ">
+                  <text variable="container-title"/>
+                  <text macro="website-designation"/>
+                </group>
+                <text variable="note"/>
+              </group>
+            </if>
+            <!-- Сайт в целом (нет отдельного названия сайта): Название : офиц. сайт -->
+            <else>
+              <group delimiter=" // ">
+                <group delimiter=" : ">
+                  <text macro="author-title"/>
+                  <text macro="website-designation"/>
+                </group>
+                <text variable="note"/>
+              </group>
+            </else>
+          </choose>
           <group delimiter=" ">
             <text variable="URL" prefix="URL: "/>
             <choose>
