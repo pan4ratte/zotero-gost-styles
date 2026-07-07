@@ -543,7 +543,6 @@
                 <text macro="number-of-volumes"/>
               </group>
               <text macro="volume"/>
-              <text variable="title-short"/>
             </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>
@@ -621,7 +620,6 @@
           <text macro="publisher"/>
           <text macro="volume"/>
           <text macro="collection-number"/>
-          <text variable="title-short"/>
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
@@ -652,7 +650,6 @@
           </group>
           <text macro="year-date"/>
           <text macro="volume"/>
-          <text variable="title-short"/>
           <text variable="issue" prefix="№&#160;"/>
           <choose>
             <if variable="locator">
@@ -682,7 +679,6 @@
             </group>
             <text variable="container-title"/>
           </group>
-          <text variable="title-short"/>
           <text macro="year-date"/>
           <text macro="day-month"/>
           <choose>
@@ -753,7 +749,6 @@
                 <text macro="number-of-volumes"/>
               </group>
               <text macro="volume"/>
-              <text variable="title-short"/>
             </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>
