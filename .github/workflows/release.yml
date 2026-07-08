@@ -96,4 +96,4 @@ jobs:
           body_path: ${{ steps.notes.outputs.generated == 'false' && 'release-notes.md' || '' }}
           generate_release_notes: ${{ steps.notes.outputs.generated == 'true' }}
           files: |
-            *.csl
+            styles/*.csl
