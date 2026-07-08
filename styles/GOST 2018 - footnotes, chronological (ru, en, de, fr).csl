@@ -184,10 +184,10 @@
   <macro name="language-sort"> <!-- Макрос сортировки по полю "Language" (сначала русскоязычные источники, затем иностранные) -->
     <choose>
       <if variable="language">
-        <text variable="language"/>
+        <text value="B000"/>
       </if>
       <else>
-        <text value="AA00"/>
+        <text value="A000"/>
       </else>
     </choose>
   </macro>
