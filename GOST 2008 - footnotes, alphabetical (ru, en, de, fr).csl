@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0">
   <info>
-    <title>ГОСТ 2008: постраничные сноски, алфавитный порядок (ru, en, de, fr)</title>
+    <title>ГОСТ Р 7.0.5-2008: подстрочные сноски, алфавитный порядок (ru, en, de, fr)</title>
     <id>9e6c242e-d470-4b2b-b967-1f8f4fbcd7d6</id>
     <link href="https://github.com/pan4ratte/zotero-gost-styles" rel="self"/>
     <link href="http://protect.gost.ru/document.aspx?control=7&amp;id=173511" rel="documentation"/>
@@ -12,14 +12,16 @@
     </author>
     <category citation-format="note"/>
     <category field="generic-base"/>
-    <updated>07.07.2026</updated>
+    <updated>08.07.2026</updated>
     <summary>
-      Стиль разработал Ингрэм М. А. Основа кода позаимствована у Романа Расупова, внесены значительные изменения. Данный стиль обладает особенностями, восполняющими недостатки многих других существующих стилей:
+      Стиль разработал Ингрэм М. А. Основа кода позаимствована у Романа Распопова, внесены значительные изменения. Данный стиль обладает особенностями, восполняющими недостатки многих других существующих стилей:
 
-      * Постраничные сноски;
+      * Подстрочные сноски;
       * Корректная обработка источников на русском, английском, французском и немецком языках (при заполнении поля "Language" значениями "ru", "en", "fr" или "de");
-      * Автоматическая обработка повторяющихся сносок "Ibid." и "Там же" и т.д., — в том числе с указанием страниц;
-      * Сокращённоая библиографическая запись при повторном цитировании источника (не Ibid.). При наличии заполненном поле "Short Title" используется сокращённое название. Сокращение не применяется к веб-страницам.
+      * Автоматическая обработка повторяющихся сносок "Ibid.", "Там же" и т.д., — в том числе с указанием страниц;
+      * Сокращённая библиографическая запись при повторном цитировании источника (не "Ibid."): при заполненном поле "Short Title" используется сокращённое название, при не заполненном — полное. Сокращение не применяется к электронным ресурсам;
+      * Арабская нумерация источников в списке литературы;
+      * Оформление ссылок на электронные ресурсы (веб-страницы) приведено в соответствие с ГОСТ Р 7.0.108-2022: выводятся название сайта (поле "Website Title") и обозначение вида ресурса — "сайт" по умолчанию либо значение поля "Website Type" (например, "офиц. сайт").
 
       В данный момент стиль активно разрабатывается, поэтому возможны значительные изменения.
     </summary>
@@ -320,7 +322,7 @@
   </macro>
 
   <macro name="page">
-    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="lowercase"/>
+    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="capitalize-first"/>
     <text variable="page" suffix="."/>
   </macro>
 
@@ -387,7 +389,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" suffix="&#160;"/>
+            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -403,7 +405,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <label variable="locator" form="short" text-case="capitalize-first"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -421,7 +423,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" suffix="&#160;"/>
+            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -437,7 +439,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <label variable="locator" form="short" text-case="capitalize-first"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -455,7 +457,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" suffix="&#160;"/>
+            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -471,7 +473,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <label variable="locator" form="short" text-case="capitalize-first"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -489,7 +491,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid-ru"/>
-            <text term="page" form="short" suffix="&#160;"/>
+            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -505,7 +507,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="lowercase"/>
+                  <label variable="locator" form="short" text-case="capitalize-first"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -555,7 +557,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -582,7 +584,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -623,7 +625,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -654,7 +656,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -684,7 +686,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -760,7 +762,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="lowercase"/>
+          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
