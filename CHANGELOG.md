@@ -1,5 +1,15 @@
 # История изменений
 
+## 3.1.0
+
+### GOST 2008 - footnotes (alphabetical, chronological, order of appearance)
+
+* Локаторы страниц теперь снова строчные (`с.`) для соответствия ГОСТ во всех трёх стилях, основнанных на ГОСТ 2008.
+
+### GOST 2018 - footnotes (alphabetical, chronological, order of appearance)
+
+* Исправлена сортировка списка литературы: источники на русском языке теперь группируются первыми.
+
 ## 3.0.0
 
 ### GOST 2008 - footnotes, alphabetical (ru, en, de, fr)
