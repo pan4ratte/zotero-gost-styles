@@ -325,7 +325,7 @@
   </macro>
 
   <macro name="page">
-    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="capitalize-first"/>
+    <label variable="page" form="short" prefix="" suffix="&#160;" text-case="lowercase"/>
     <text variable="page" suffix="."/>
   </macro>
 
@@ -392,7 +392,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
+            <text term="page" form="short" text-case="lowercase" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -408,7 +408,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="capitalize-first"/>
+                  <label variable="locator" form="short" text-case="lowercase"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -426,7 +426,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
+            <text term="page" form="short" text-case="lowercase" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -442,7 +442,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="capitalize-first"/>
+                  <label variable="locator" form="short" text-case="lowercase"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -460,7 +460,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid" text-case="capitalize-first"/>
-            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
+            <text term="page" form="short" text-case="lowercase" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -476,7 +476,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="capitalize-first"/>
+                  <label variable="locator" form="short" text-case="lowercase"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -494,7 +494,7 @@
         <if position="ibid-with-locator">
           <group delimiter=", ">
             <text term="ibid-ru"/>
-            <text term="page" form="short" text-case="capitalize-first" suffix="&#160;"/>
+            <text term="page" form="short" text-case="lowercase" suffix="&#160;"/>
           </group>
             <text variable="locator"/>
         </if>
@@ -510,7 +510,7 @@
               <group delimiter=". – ">
                 <text macro="author-short-title"/>
                 <group delimiter="&#160;">
-                  <label variable="locator" form="short" text-case="capitalize-first"/>
+                  <label variable="locator" form="short" text-case="lowercase"/>
                   <text variable="locator"/>
                 </group>
               </group>
@@ -560,7 +560,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -587,7 +587,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -628,7 +628,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -659,7 +659,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -689,7 +689,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
@@ -765,7 +765,7 @@
           <choose>
             <if variable="locator">
           	  <group delimiter="&#160;">
-          	  	<label variable="locator" form="short" text-case="capitalize-first"/>
+          	  	<label variable="locator" form="short" text-case="lowercase"/>
           	  	<text variable="locator" suffix="."/>
           	  </group>
         	</if>
